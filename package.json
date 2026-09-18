@@ -1,0 +1,8 @@
+{
+  "name": "skazka-websurface-policy-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/web-surface-policy.test.mjs"
+  }
+}
