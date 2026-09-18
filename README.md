@@ -1,23 +1,27 @@
 # Skazka WebSurface
 
-**RU:** Переиспользуемый web-контур Skazka и основа будущего браузерного клиента.
+> RU — основной язык · EN — required second language
 
-**EN:** Reusable Skazka web surface and a foundation for a future browser client.
+## RU
 
-## Что здесь будет / What belongs here
+Переиспользуемый веб-контур для Android и основа будущих браузерных функций.
 
-- жизненный цикл WebView / web surface;
-- навигация;
-- безопасная обработка внутренних и внешних ссылок;
-- точки интеграции с Auth и Download;
-- phone/tablet layouts;
-- portrait/landscape behaviour;
-- восстановление состояния страницы.
+**Текущий статус:** репозиторий создан как целевая граница модуля. Рабочий код переносится из существующих проектов поэтапно, с тестами и без копирования project-specific зависимостей.
 
-## Граница / Boundary
+**Граница модуля:** navigation/session/webview surface contracts; no private source credentials.
 
-WebSurface не должен знать о конкретном контентном сайте. Source-specific правила остаются в Source SDK или приложении.
+Перед первым стабильным релизом здесь появятся собственные versioning, тесты, changelog и лицензия. До выбора лицензии публикация кода не означает автоматическое разрешение на его повторное использование.
 
-## Статус / Status
+## EN
 
-Существующие наработки SkazkaWebSurface будут выноситься сюда после очистки зависимостей от Skazka Hub.
+Reusable Android web surface and a foundation for future browser features.
+
+**Current status:** this repository is the target module boundary. Working code is being extracted from existing projects incrementally, with tests and without copying project-specific dependencies.
+
+**Module boundary:** navigation/session/webview surface contracts; no private source credentials.
+
+Before the first stable release, this repository will get its own versioning, tests, changelog, and license. Until a license is selected, publishing the source does not automatically grant reuse rights.
+
+## Development rules / Правила разработки
+
+See [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md).
