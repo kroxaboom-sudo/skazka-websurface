@@ -4,24 +4,36 @@
 
 ## RU
 
-Переиспользуемый веб-контур для Android и основа будущих браузерных функций.
+Небольшая Android-библиотека для единообразного открытия пользовательских HTTPS-страниц через Custom Tabs.
 
-**Текущий статус:** репозиторий создан как целевая граница модуля. Рабочий код переносится из существующих проектов поэтапно, с тестами и без копирования project-specific зависимостей.
+Модуль вынесен из Skazka Hub и больше не зависит от его `MainActivity`. Он намеренно не содержит WebView fallback и не открывает обычный браузер молча, если Custom Tabs недоступны.
 
-**Граница модуля:** navigation/session/webview surface contracts; no private source credentials.
-
-Перед первым стабильным релизом здесь появятся собственные versioning, тесты, changelog и лицензия. До выбора лицензии публикация кода не означает автоматическое разрешение на его повторное использование.
+**Статус:** `0.1.0-preview` — самостоятельная библиотека. Policy-test и `:websurface:assembleDebug` проверены на HOSTKEY.
 
 ## EN
 
-Reusable Android web surface and a foundation for future browser features.
+A small Android library for consistent user-facing HTTPS navigation through Custom Tabs.
 
-**Current status:** this repository is the target module boundary. Working code is being extracted from existing projects incrementally, with tests and without copying project-specific dependencies.
+The module was extracted from Skazka Hub and no longer depends on its `MainActivity`. It intentionally has no WebView fallback and does not silently open a standalone browser when Custom Tabs are unavailable.
 
-**Module boundary:** navigation/session/webview surface contracts; no private source credentials.
+**Status:** `0.1.0-preview` — standalone library. The policy test and `:websurface:assembleDebug` have been verified on HOSTKEY.
 
-Before the first stable release, this repository will get its own versioning, tests, changelog, and license. Until a license is selected, publishing the source does not automatically grant reuse rights.
+## Module
 
-## Development rules / Правила разработки
+- coordinates: `com.kroxaboom.skazka:skazka-websurface:0.1.0-preview`
+- namespace: `com.kroxaboom.skazka.websurface`
+- minSdk: 33
+- compileSdk: 35
+- Java: 17
+- external runtime dependencies: none
 
-See [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md).
+## Verification / Проверка
+
+```bash
+npm test
+gradle :websurface:assembleDebug
+```
+
+See [docs/POLICY.md](docs/POLICY.md) and [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md).
+
+> A license will be selected before the first stable public release. Until then, publication of the source does not grant reuse rights.
