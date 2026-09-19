@@ -29,14 +29,21 @@ public final class SkazkaWebSurface {
     private SkazkaWebSurface() {}
 
     public static void openHttps(Context context, String url) {
-        if (context == null) {
-            throw new IllegalArgumentException("Context must not be null");
-        }
-
         openHttps(context, Uri.parse(url == null ? "" : url.trim()));
     }
 
     public static void openHttps(Context context, Uri target) {
+        openHttps(context, target, 0xff151b29, 0xff0f141e);
+    }
+
+    public static void openHttps(Context context, String url,
+            int toolbarColor, int navigationBarColor) {
+        openHttps(context, Uri.parse(url == null ? "" : url.trim()),
+                toolbarColor, navigationBarColor);
+    }
+
+    public static void openHttps(Context context, Uri target,
+            int toolbarColor, int navigationBarColor) {
         if (context == null) {
             throw new IllegalArgumentException("Context must not be null");
         }
@@ -56,8 +63,8 @@ public final class SkazkaWebSurface {
         Bundle customTabs = new Bundle();
         customTabs.putBinder(CUSTOM_TABS_SESSION, null);
         intent.putExtras(customTabs);
-        intent.putExtra(CUSTOM_TABS_TOOLBAR_COLOR, 0xff151b29);
-        intent.putExtra(CUSTOM_TABS_NAVIGATION_BAR_COLOR, 0xff0f141e);
+        intent.putExtra(CUSTOM_TABS_TOOLBAR_COLOR, toolbarColor);
+        intent.putExtra(CUSTOM_TABS_NAVIGATION_BAR_COLOR, navigationBarColor);
         intent.putExtra(CUSTOM_TABS_SHARE_MENU_ITEM, false);
         intent.putExtra(CUSTOM_TABS_ENABLE_INSTANT_APPS, false);
 
