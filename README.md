@@ -8,7 +8,7 @@
 
 Модуль вынесен из Skazka Hub и больше не зависит от его `MainActivity`. Он намеренно не содержит WebView fallback и не открывает обычный браузер молча, если Custom Tabs недоступны.
 
-**Статус:** `0.1.0-preview` — самостоятельная библиотека. Policy-test и `:websurface:assembleDebug` проверены на HOSTKEY.
+**Статус:** `0.1.0-preview` — самостоятельная библиотека. Policy-test, `:websurface:assembleDebug` и `:websurface:lintDebug` проверены на HOSTKEY.
 
 ## EN
 
@@ -16,7 +16,7 @@ A small Android library for consistent user-facing HTTPS navigation through Cust
 
 The module was extracted from Skazka Hub and no longer depends on its `MainActivity`. It intentionally has no WebView fallback and does not silently open a standalone browser when Custom Tabs are unavailable.
 
-**Status:** `0.1.0-preview` — standalone library. The policy test and `:websurface:assembleDebug` have been verified on HOSTKEY.
+**Status:** `0.1.0-preview` — standalone library. The policy test, `:websurface:assembleDebug`, and `:websurface:lintDebug` have been verified on HOSTKEY.
 
 ## Module
 
